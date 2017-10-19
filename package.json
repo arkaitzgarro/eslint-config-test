@@ -1,0 +1,33 @@
+{
+  "name": "eslint-config-test",
+  "version": "1.0.1",
+  "description": "ESLint shareable config for repos",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "repository": "arkaitzgarro/eslint-config-test",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "linter",
+    "style",
+    "code",
+    "style"
+  ],
+  "bugs": {
+    "url": "https://github.com/arkaitzgarro/eslint-config-test/issues"
+  },
+  "homepage": "https://github.com/arkaitzgarro/eslint-config-test#readme",
+  "scripts": {
+    "test": "node spec/index.js"
+  },
+  "peerDependencies": {
+    "eslint": ">=4"
+  },
+  "devDependencies": {
+    "eslint": "4.8.0",
+    "eslint-release": "0.10.3"
+  }
+}

@@ -9,6 +9,6 @@ jobs:
       install: yarn
       script: npm test
     - stage: Release
-      if: branch = master
       node_js: 8
-      script: echo "Release"
+      script: tools/npm-publish.sh
+      after_script: tools/gh-release.sh

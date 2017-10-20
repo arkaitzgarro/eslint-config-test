@@ -8,12 +8,7 @@ node_js:
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
-jobs:
-  include:
-    - stage: Unit tests
-      install: yarn
-      script: npm test
-    - stage: Release
-      script: echo "Releasing to npm, or not... 📦"
-      after_success:
-        - npm run semantic-release
+install: yarn
+script: npm test
+after_success:
+  - npm run semantic-release

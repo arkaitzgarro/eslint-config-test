@@ -1,14 +1,19 @@
 language: node_js
-cache: yarn
-install: yarn
+cache:
+  directories:
+    - ~/.npm
+    - node_modules
+node_js:
+  - 8
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
 jobs:
   include:
     - stage: Unit tests
-      node_js:
-        - 8
       install: yarn
       script: npm test
     - stage: Release
-      node_js: 8
-      script: tools/npm-publish.sh
-      after_script: tools/gh-release.sh
+      script: echo "Releasing to npm, or not... 📦"
+      after_success:
+        - npm run semantic-release
